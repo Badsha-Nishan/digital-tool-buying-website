@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Resume Builder Pro",
+    "description": "Create professional resumes with modern templates and ATS optimization.",
+    "price": 9.99,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "100+ templates",
+      "ATS optimization",
+      "Export to PDF",
+      "Cover letter builder"
+    ],
+    "icon": "FaFileAlt"
+  },
+  {
+    "id": 2,
+    "name": "AI Content Writer",
+    "description": "Generate high-quality blog posts, ads, and social media content using AI.",
+    "price": 19.99,
+    "period": "monthly",
+    "tag": "Best Seller",
+    "tagType": "best-seller",
+    "features": [
+      "AI blog generator",
+      "SEO optimization",
+      "Multi-language support",
+      "Content templates"
+    ],
+    "icon": "FaPenNib"
+  },
+  {
+    "id": 3,
+    "name": "Design Kit UI",
+    "description": "A complete UI kit for designers with ready-to-use components.",
+    "price": 49.99,
+    "period": "one-time",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "500+ UI components",
+      "Figma & Adobe XD support",
+      "Responsive layouts",
+      "Dark mode designs"
+    ],
+    "icon": "FaPalette"
+  },
+  {
+    "id": 4,
+    "name": "Project Manager Pro",
+    "description": "Manage your team and projects efficiently with powerful tools.",
+    "price": 14.99,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "Task management",
+      "Team collaboration",
+      "Kanban boards",
+      "Real-time updates"
+    ],
+    "icon": "FaTasks"
+  },
+  {
+    "id": 5,
+    "name": "Stock Image Library",
+    "description": "Access thousands of high-quality stock images for your projects.",
+    "price": 99.99,
+    "period": "yearly",
+    "tag": "Best Seller",
+    "tagType": "best-seller",
+    "features": [
+      "10,000+ images",
+      "Royalty-free",
+      "HD & 4K downloads",
+      "Commercial use"
+    ],
+    "icon": "FaImage"
+  },
+  {
+    "id": 6,
+    "name": "Code Snippet Manager",
+    "description": "Save, organize, and reuse your code snippets efficiently.",
+    "price": 5.99,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "Unlimited snippets",
+      "Syntax highlighting",
+      "Cloud sync",
+      "Search & filter"
+    ],
+    "icon": "FaCode"
+  },
+  {
+    "id": 7,
+    "name": "Video Editor Lite",
+    "description": "Edit videos easily with drag-and-drop tools and effects.",
+    "price": 29.99,
+    "period": "one-time",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "Drag & drop editor",
+      "Transitions & effects",
+      "HD export",
+      "Audio editing"
+    ],
+    "icon": "FaVideo"
+  },
+  {
+    "id": 8,
+    "name": "Cloud Storage Plus",
+    "description": "Secure cloud storage solution for your files and backups.",
+    "price": 59.99,
+    "period": "yearly",
+    "tag": "Best Seller",
+    "tagType": "best-seller",
+    "features": [
+      "1TB storage",
+      "Secure encryption",
+      "File sharing",
+      "Auto backup"
+    ],
+    "icon": "FaCloud"
+  }
+]
