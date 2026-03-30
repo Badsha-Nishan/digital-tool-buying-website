@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Banner from "./components/Banner/Banner";
 import CardSection from "./components/CardSection/CardSection";
@@ -9,15 +9,23 @@ import PricingCard from "./components/PricingCard/PricingCard";
 import Rating from "./components/Rating/Rating";
 import SectionTitle from "./components/SectionTitle/SectionTitle";
 import StepsCards from "./components/StepsCards/StepsCards";
-import Tab from "./components/Tab/Tab";
+import Cart from "./components/Cart/Cart";
 
 const PriceCardPromise = async () => {
   const res = await fetch("/pricingCards.json");
   return res.json();
 };
 
+const ProductsCardPromise = async () => {
+  const res = await fetch("/products.json");
+  return res.json();
+};
+
 function App() {
-  const cardPromise = PriceCardPromise()
+  const [selectTab, setSelectTab] = useState("products");
+  const [cart, setCart] = useState([])
+  const productCard = ProductsCardPromise();
+  const cardPromise = PriceCardPromise();
   return (
     <>
       <Navbar></Navbar>
@@ -34,8 +42,36 @@ function App() {
           </p>
         }
       ></SectionTitle>
-      <Tab></Tab>
-      <CardSection></CardSection>
+      <div className="mb-10">
+        <div className="tabs tabs-box justify-center bg-white">
+          <input
+            type="radio"
+            name="my_tabs_1"
+            className="tab rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+            aria-label="Products"
+            defaultChecked
+            onClick={() => setSelectTab("products")}
+          />
+          <input
+            type="radio"
+            name="my_tabs_1"
+            className="tab rounded-full"
+            aria-label="Cart"
+            onClick={() => setSelectTab("cart")}
+          />
+        </div>
+      </div>
+      {selectTab === "products" ?  <Suspense
+        fallback={
+          <div className="flex justify-center items-center min-h-2/6 gap-7 flex-col">
+            <span className="loading loading-spinner loading-xl"></span>
+            <p>Content Loading....</p>
+          </div>
+        }
+      >
+        <CardSection productCard={productCard} cart={cart} setCart={setCart}></CardSection>
+      </Suspense>: <Cart cart={cart}></Cart>}
+      
       <SectionTitle
         title="Get Started in 3 Steps"
         description={
@@ -51,7 +87,14 @@ function App() {
           </p>
         }
       ></SectionTitle>
-      <Suspense>
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center min-h-2/6 gap-7 flex-col">
+            <span className="loading loading-spinner loading-xl"></span>
+            <p>Content Loading....</p>
+          </div>
+        }
+      >
         <PricingCard cardPromise={cardPromise}></PricingCard>
       </Suspense>
       <FooterContent></FooterContent>

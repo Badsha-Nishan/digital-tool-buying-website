@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
-const PriceCard = ({ card }) => {
-  const {
-    name,
-    description,
-    price,
-    period,
-    tag,
-    tagType,
-    buttonText,
-    features,
-    highlight,
-  } = card;
+const Cards = ({ card, cart, setCart }) => {
+  const { name, description, price, tag, period, tagType, features, icon } =
+    card;
+  const [selectProduct, setSelectProduct] = useState(false);
+
+  const handleBuy = () => {
+    setSelectProduct(true);
+    setCart([...cart, card]);
+  };
   return (
     <div className="card bg-base-200 shadow-sm ">
       <div className="card-body relative">
@@ -31,7 +28,7 @@ const PriceCard = ({ card }) => {
         <div>
           <p>{description}</p>
         </div>
-        <ul className="mt-6 flex flex-1 flex flex-col gap-2 text-xs">
+        <ul className="mt-6 flex flex-1 flex-col gap-2 text-xs">
           {features.map((feature, index) => (
             <li key={index}>
               <svg
@@ -53,8 +50,15 @@ const PriceCard = ({ card }) => {
           ))}
         </ul>
         <div className="mt-6">
-          <button className="btn rounded-full btn-primary btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
-            {buttonText}
+          <button
+            onClick={handleBuy}
+            className={`btn ${
+              selectProduct
+                ? "bg-green-500 border-none"
+                : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+            } rounded-full btn-primary btn-block `}
+          >
+            {selectProduct ? "✅ Added to Cart!" : "Buy Now"}
           </button>
         </div>
       </div>
@@ -62,4 +66,4 @@ const PriceCard = ({ card }) => {
   );
 };
 
-export default PriceCard;
+export default Cards;

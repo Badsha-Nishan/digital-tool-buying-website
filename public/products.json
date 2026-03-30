@@ -13,7 +13,7 @@
       "Export to PDF",
       "Cover letter builder"
     ],
-    "icon": "FaFileAlt"
+    "icon": "design_tool.png"
   },
   {
     "id": 2,
@@ -29,7 +29,7 @@
       "Multi-language support",
       "Content templates"
     ],
-    "icon": "FaPenNib"
+    "icon": "operation.png"
   },
   {
     "id": 3,
@@ -45,7 +45,7 @@
       "Responsive layouts",
       "Dark mode designs"
     ],
-    "icon": "FaPalette"
+    "icon": "portfolio.png"
   },
   {
     "id": 4,
@@ -61,7 +61,7 @@
       "Kanban boards",
       "Real-time updates"
     ],
-    "icon": "FaTasks"
+    "icon": "shopping_cart.png"
   },
   {
     "id": 5,
@@ -77,7 +77,7 @@
       "HD & 4K downloads",
       "Commercial use"
     ],
-    "icon": "FaImage"
+    "icon": "social_media.png"
   },
   {
     "id": 6,
@@ -93,7 +93,7 @@
       "Cloud sync",
       "Search & filter"
     ],
-    "icon": "FaCode"
+    "icon": "writing_2327400 1.png"
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@
       "HD export",
       "Audio editing"
     ],
-    "icon": "FaVideo"
+    "icon": "social_media.png"
   },
   {
     "id": 8,
@@ -125,6 +125,6 @@
       "File sharing",
       "Auto backup"
     ],
-    "icon": "FaCloud"
+    "icon": "writing_2327400 1.png"
   }
 ]
