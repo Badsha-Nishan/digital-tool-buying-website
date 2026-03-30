@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import "./App.css";
 import Banner from "./components/Banner/Banner";
 import CardSection from "./components/CardSection/CardSection";
@@ -10,7 +11,13 @@ import SectionTitle from "./components/SectionTitle/SectionTitle";
 import StepsCards from "./components/StepsCards/StepsCards";
 import Tab from "./components/Tab/Tab";
 
+const PriceCardPromise = async () => {
+  const res = await fetch("/pricingCards.json");
+  return res.json();
+};
+
 function App() {
+  const cardPromise = PriceCardPromise()
   return (
     <>
       <Navbar></Navbar>
@@ -44,7 +51,9 @@ function App() {
           </p>
         }
       ></SectionTitle>
-      <PricingCard></PricingCard>
+      <Suspense>
+        <PricingCard cardPromise={cardPromise}></PricingCard>
+      </Suspense>
       <FooterContent></FooterContent>
       <Footer></Footer>
     </>
