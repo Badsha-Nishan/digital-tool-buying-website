@@ -23,7 +23,7 @@ const ProductsCardPromise = async () => {
 
 function App() {
   const [selectTab, setSelectTab] = useState("products");
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
   const productCard = ProductsCardPromise();
   const cardPromise = PriceCardPromise();
   return (
@@ -47,7 +47,11 @@ function App() {
           <input
             type="radio"
             name="my_tabs_1"
-            className="tab rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+            className={`tab rounded-full w-40 border-gray-700 border-1 ${
+              selectTab === "products"
+                ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
+                : "text-black"
+            } `}
             aria-label="Products"
             defaultChecked
             onClick={() => setSelectTab("products")}
@@ -55,23 +59,35 @@ function App() {
           <input
             type="radio"
             name="my_tabs_1"
-            className="tab rounded-full"
-            aria-label="Cart"
+            className={`tab rounded-full w-40 border-gray-700 border-1  ${
+              selectTab === "cart"
+                ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
+                : "text-black"
+            } `}
+            aria-label="Cart (0)"
             onClick={() => setSelectTab("cart")}
           />
         </div>
       </div>
-      {selectTab === "products" ?  <Suspense
-        fallback={
-          <div className="flex justify-center items-center min-h-2/6 gap-7 flex-col">
-            <span className="loading loading-spinner loading-xl"></span>
-            <p>Content Loading....</p>
-          </div>
-        }
-      >
-        <CardSection productCard={productCard} cart={cart} setCart={setCart}></CardSection>
-      </Suspense>: <Cart cart={cart}></Cart>}
-      
+      {selectTab === "products" ? (
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center min-h-2/6 gap-7 flex-col">
+              <span className="loading loading-spinner loading-xl"></span>
+              <p>Content Loading....</p>
+            </div>
+          }
+        >
+          <CardSection
+            productCard={productCard}
+            cart={cart}
+            setCart={setCart}
+          ></CardSection>
+        </Suspense>
+      ) : (
+        <Cart cart={cart}></Cart>
+      )}
+
       <SectionTitle
         title="Get Started in 3 Steps"
         description={

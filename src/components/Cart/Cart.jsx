@@ -2,7 +2,7 @@ import React from "react";
 
 const Cart = ({ cart }) => {
   return (
-    <div className="w-11/12 mx-auto p-5 bg-base-200 rounded-lg">
+    <div className="w-11/12 mx-auto p-5 bg-base-200 rounded-lg space-y-3">
       <h2 className="text-3xl font-bold mb-4">Your Cart</h2>
       {cart.map((item) => (
         <div key={item.id}>
@@ -24,6 +24,15 @@ const Cart = ({ cart }) => {
           </div>
         </div>
       ))}
+      <div className="flex justify-between text-2xl font-bold">
+        <div>
+          <p>Total:</p>
+        </div>
+        <div>$0</div>
+      </div>
+      <button className="btn w-full rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
+        Proceed to Checkout
+      </button>
     </div>
   );
 };
