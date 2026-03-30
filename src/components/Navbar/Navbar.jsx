@@ -65,7 +65,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end gap-2">
+        <div className="navbar-end gap-2 flex-col md:flex-row">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg
@@ -86,7 +86,7 @@ const Navbar = () => {
               <span className="badge badge-sm indicator-item">8</span>
             </div>
           </div>
-          <a className="btn rounded-full">Login</a>
+          <a className="btn btn-outline btn-primary rounded-full">Login</a>
           <a className="btn rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
             Get Started
           </a>
