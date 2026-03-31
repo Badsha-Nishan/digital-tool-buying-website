@@ -23,9 +23,11 @@ const Banner = () => {
           </p>
         </div>
         <div>
-          <button className="btn mr-4 rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
-            Explore Products
-          </button>
+          <a href="#products">
+            <button className="btn mr-4 rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:from-[#9514FA] hover:to-[#4F39F6]">
+              Explore Products
+            </button>
+          </a>
           <button className="btn btn-outline btn-primary rounded-full">
             <CiPlay1 />
             Watch Demo

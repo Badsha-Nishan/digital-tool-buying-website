@@ -49,26 +49,26 @@ const Navbar = ({ cart }) => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Products</a>
+              <a href="#products">Products</a>
             </li>
             <li>
               <a>Features</a>
             </li>
             <li>
-              <a>Pricing</a>
+              <a href="#price">Pricing</a>
             </li>
             <li>
-              <a>Testimonials</a>
+              <a href="#getCard">Testimonials</a>
             </li>
             <li>
-              <a>FAQ</a>
+              <a href="#foot">FAQ</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end gap-2 flex-col md:flex-row">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
-              <svg
+              <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
@@ -89,7 +89,10 @@ const Navbar = ({ cart }) => {
             </div>
           </div>
           <a className="btn btn-outline btn-primary rounded-full">Login</a>
-          <a className="btn rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
+          <a
+            href="#products"
+            className="btn rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:from-[#9514FA] hover:to-[#4F39F6]"
+          >
             Get Started
           </a>
         </div>

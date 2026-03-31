@@ -54,6 +54,7 @@ function App() {
                 : "text-black"
             } `}
             aria-label="Products"
+            id="products"
             defaultChecked
             onClick={() => setSelectTab("products")}
           />

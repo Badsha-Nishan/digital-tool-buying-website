@@ -5,7 +5,7 @@ import RocketIcon from "../../assets/rocket.png";
 
 const StepsCards = () => {
   return (
-    <div className="bg-base-200 p-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div id="getCard" className="bg-base-200 p-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
       <div className="card bg-base-100 w-11/12 mx-auto shadow-sm py-16 flex justify-center items-center">
         <div className="badge badge-primary absolute top-5 right-5 rounded-full w-12 h-12 text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
           01
