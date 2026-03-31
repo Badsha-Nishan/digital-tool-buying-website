@@ -85,7 +85,7 @@ function App() {
           ></CardSection>
         </Suspense>
       ) : (
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart} setCart={setCart}></Cart>
       )}
 
       <SectionTitle

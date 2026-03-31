@@ -1,6 +1,10 @@
 import React from "react";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, setCart }) => {
+  const handleRemove = (cart, item) => {
+    const filteredCart = cart.filter((items) => items.name !== item.name);
+    setCart(filteredCart);
+  };
   return (
     <div className="w-11/12 mx-auto p-5 bg-base-200 rounded-lg space-y-3">
       <h2 className="text-3xl font-bold mb-4">Your Cart</h2>
@@ -18,7 +22,12 @@ const Cart = ({ cart }) => {
                 </div>
               </div>
               <div>
-                <button className="text-red-500 font-bold btn">Remove</button>
+                <button
+                  onClick={() => handleRemove(cart, item)}
+                  className="text-red-500 font-bold btn"
+                >
+                  Remove
+                </button>
               </div>
             </div>
           </div>
@@ -28,7 +37,7 @@ const Cart = ({ cart }) => {
         <div>
           <p>Total:</p>
         </div>
-        <div>$0</div>
+        <div>${cart.reduce((total, el) => total + el.price, 0).toFixed(2)}</div>
       </div>
       <button className="btn w-full rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
         Proceed to Checkout
