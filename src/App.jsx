@@ -10,6 +10,7 @@ import Rating from "./components/Rating/Rating";
 import SectionTitle from "./components/SectionTitle/SectionTitle";
 import StepsCards from "./components/StepsCards/StepsCards";
 import Cart from "./components/Cart/Cart";
+import EmptyCart from "./components/Cart/EmptyCart";
 
 const PriceCardPromise = async () => {
   const res = await fetch("/pricingCards.json");
@@ -84,8 +85,10 @@ function App() {
             setCart={setCart}
           ></CardSection>
         </Suspense>
-      ) : (
+      ) : cart.length !== 0 ? (
         <Cart cart={cart} setCart={setCart}></Cart>
+      ) : (
+        <EmptyCart setSelectTab={setSelectTab}></EmptyCart>
       )}
 
       <SectionTitle

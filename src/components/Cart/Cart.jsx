@@ -39,7 +39,7 @@ const Cart = ({ cart, setCart }) => {
         </div>
         <div>${cart.reduce((total, el) => total + el.price, 0).toFixed(2)}</div>
       </div>
-      <button className="btn w-full rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
+      <button onClick={()=> setCart([])} className="btn w-full rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
         Proceed to Checkout
       </button>
     </div>
