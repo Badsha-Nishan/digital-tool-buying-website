@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-const Cards = ({ card, cart, setCart }) => {
+const Cards = ({ card, cart, setCart, notify }) => {
   const { name, description, price, tag, period, tagType, features, icon } =
     card;
   const [selectProduct, setSelectProduct] = useState(false);
 
   const handleBuy = () => {
+    notify()
     setSelectProduct(true);
     setCart([...cart, card]);
   };
@@ -14,11 +15,11 @@ const Cards = ({ card, cart, setCart }) => {
       <div className="card-body relative">
         <span
           className={
-            tagType==="best-seller" ?
-            "badge badge-xs bg-[#FEF3C6] absolute text-[#BB4D00] top-2 text-sm p-3 rounded-full right-2"
-            : tagType === "new"
-            ? "badge badge-xs bg-[#DBFCE7] text-[#0A883E] absolute top-2 text-sm p-3 rounded-full right-2"
-            :"badge badge-xs bg-[#E1E7FF] text-[#4F39F6] absolute top-2 text-sm p-3 rounded-full right-2"
+            tagType === "best-seller"
+              ? "badge badge-xs bg-[#FEF3C6] absolute text-[#BB4D00] top-2 text-sm p-3 rounded-full right-2"
+              : tagType === "new"
+              ? "badge badge-xs bg-[#DBFCE7] text-[#0A883E] absolute top-2 text-sm p-3 rounded-full right-2"
+              : "badge badge-xs bg-[#E1E7FF] text-[#4F39F6] absolute top-2 text-sm p-3 rounded-full right-2"
           }
         >
           {tag}
@@ -58,6 +59,7 @@ const Cards = ({ card, cart, setCart }) => {
         </ul>
         <div className="mt-6">
           <button
+            type="button"
             onClick={handleBuy}
             className={`btn ${
               selectProduct

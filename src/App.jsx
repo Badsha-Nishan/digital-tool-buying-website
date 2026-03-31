@@ -11,6 +11,7 @@ import SectionTitle from "./components/SectionTitle/SectionTitle";
 import StepsCards from "./components/StepsCards/StepsCards";
 import Cart from "./components/Cart/Cart";
 import EmptyCart from "./components/Cart/EmptyCart";
+import { ToastContainer, toast } from 'react-toastify';
 
 const PriceCardPromise = async () => {
   const res = await fetch("/pricingCards.json");
@@ -27,6 +28,13 @@ function App() {
   const [cart, setCart] = useState([]);
   const productCard = ProductsCardPromise();
   const cardPromise = PriceCardPromise();
+  const notify = () => toast.success("Card Added Successfully!",{
+    position:"top-center"
+  });
+  const notify1 = () => toast.success("Checkout Successfully!",{
+    position:"top-center"
+  });
+  const remove = ()=> toast.error("Card Removed")
   return (
     <>
       <Navbar cart={cart}></Navbar>
@@ -84,10 +92,11 @@ function App() {
             productCard={productCard}
             cart={cart}
             setCart={setCart}
+            notify={notify}
           ></CardSection>
         </Suspense>
       ) : cart.length !== 0 ? (
-        <Cart cart={cart} setCart={setCart}></Cart>
+        <Cart cart={cart} setCart={setCart} remove={remove} notify1={notify1}></Cart>
       ) : (
         <EmptyCart setSelectTab={setSelectTab}></EmptyCart>
       )}
@@ -119,6 +128,7 @@ function App() {
       </Suspense>
       <FooterContent></FooterContent>
       <Footer></Footer>
+      <ToastContainer />
     </>
   );
 }

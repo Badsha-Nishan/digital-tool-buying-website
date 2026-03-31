@@ -44,7 +44,7 @@ const Navbar = ({ cart }) => {
               </li>
             </ul>
           </div>
-          <a className="font-bold text-4xl text-[#4f39f6]">DigiTools</a>
+          <a className="font-bold text-2xl lg:text-4xl text-[#4f39f6]">DigiTools</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

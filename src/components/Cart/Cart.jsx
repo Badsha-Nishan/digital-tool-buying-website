@@ -1,7 +1,8 @@
 import React from "react";
 
-const Cart = ({ cart, setCart }) => {
+const Cart = ({ cart, setCart, remove, notify1 }) => {
   const handleRemove = (cart, item) => {
+    remove();
     const filteredCart = cart.filter((items) => items.name !== item.name);
     setCart(filteredCart);
   };
@@ -39,7 +40,13 @@ const Cart = ({ cart, setCart }) => {
         </div>
         <div>${cart.reduce((total, el) => total + el.price, 0).toFixed(2)}</div>
       </div>
-      <button onClick={()=> setCart([])} className="btn w-full rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
+      <button
+        onClick={() => {
+          setCart([]);
+          notify1();
+        }}
+        className="btn w-full rounded-full text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+      >
         Proceed to Checkout
       </button>
     </div>
