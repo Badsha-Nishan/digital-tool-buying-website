@@ -14,20 +14,27 @@ const Cards = ({ card, cart, setCart }) => {
       <div className="card-body relative">
         <span
           className={
-            tag && "badge badge-xs badge-warning absolute -top-2 right-36"
+            tagType==="best-seller" ?
+            "badge badge-xs bg-[#FEF3C6] absolute text-[#BB4D00] top-2 text-sm p-3 rounded-full right-2"
+            : tagType === "new"
+            ? "badge badge-xs bg-[#DBFCE7] text-[#0A883E] absolute top-2 text-sm p-3 rounded-full right-2"
+            :"badge badge-xs bg-[#E1E7FF] text-[#4F39F6] absolute top-2 text-sm p-3 rounded-full right-2"
           }
         >
           {tag}
         </span>
-        <div className="flex justify-between">
+        <div className="border rounded-full border-gray-300 p-3 w-14 flex justify-center items-center">
+          <img src={`/icons/${icon}`} />
+        </div>
+        <div className="flex justify-between mt-5">
           <h2 className="text-3xl font-bold">{name}</h2>
-          <span className="text-xl">
-            ${price}/{period}
-          </span>
         </div>
         <div>
           <p>{description}</p>
         </div>
+        <span className="text-xl">
+          <span className="font-bold">${price}</span>/{period}
+        </span>
         <ul className="mt-6 flex flex-1 flex-col gap-2 text-xs">
           {features.map((feature, index) => (
             <li key={index}>

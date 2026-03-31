@@ -13,25 +13,32 @@ const PriceCard = ({ card }) => {
     highlight,
   } = card;
   return (
-    <div className="card bg-base-200 shadow-sm ">
+    <div
+      className={`card bg-base-200 ${
+        tagType && "text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+      } shadow-sm`}
+    >
       <div className="card-body relative">
-        <span
-          className={
-            tag && "badge badge-xs badge-warning absolute -top-2 right-36"
-          }
+        <div
+          className={`
+            ${
+              tag &&
+              "badge bg-[#FEF3C6] text-[#BB4D00] p-4 rounded-full font-bold absolute -top-4 text-xs left-1/2 -translate-x-1/2 shadow-md"
+            }
+          `}
         >
           {tag}
-        </span>
+        </div>
         <div className="flex justify-between">
           <h2 className="text-3xl font-bold">{name}</h2>
-          <span className="text-xl">
-            ${price}/{period}
-          </span>
         </div>
-        <div>
+        <div className="mb-5">
           <p>{description}</p>
         </div>
-        <ul className="mt-6 flex flex-1 flex flex-col gap-2 text-xs">
+        <span className="text-xl">
+          <span className="font-bold text-2xl">${price}</span>/{period}
+        </span>
+        <ul className="mt-6 flex flex-1 flex-col gap-2 text-xs">
           {features.map((feature, index) => (
             <li key={index}>
               <svg
@@ -53,7 +60,13 @@ const PriceCard = ({ card }) => {
           ))}
         </ul>
         <div className="mt-6">
-          <button className="btn rounded-full btn-primary btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
+          <button
+            className={`btn rounded-full btn-primary btn-block ${
+              tagType
+                ? "bg-white text-[#4F39F6]"
+                : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+            } `}
+          >
             {buttonText}
           </button>
         </div>

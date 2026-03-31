@@ -126,5 +126,21 @@
       "Auto backup"
     ],
     "icon": "writing_2327400 1.png"
+  },
+  {
+    "id": 9,
+    "name": "AI Logo Generator",
+    "description": "Create stunning logos instantly using AI-powered design tools.",
+    "price": 15.99,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "AI logo generation",
+      "Custom color palettes",
+      "High-resolution export",
+      "Brand kit download"
+    ],
+    "icon": "social_media.png"
   }
 ]

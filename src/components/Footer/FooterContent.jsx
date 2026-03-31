@@ -14,10 +14,12 @@ const FooterContent = () => {
         }
       ></SectionTitle>
       <div className="flex ">
-        <button className="btn mr-4 rounded-full text-black hover:text-white bg-base-100 btn-ghost hover:bg-linear-to-r from-[#4F39F6] to-[#9514FA] ">
+        <button className="btn mr-4 rounded-full text-[#4F39F6] hover:text-white bg-base-100 btn-ghost hover:bg-linear-to-r from-[#4F39F6] to-[#9514FA] ">
           Explore Products
         </button>
-        <button className="btn btn-outline rounded-full">View Pricing</button>
+        <button className="btn btn-outline hover:text-[#4F39F6] rounded-full">
+          View Pricing
+        </button>
       </div>
       <p className="mt-5">
         14-day free trial • No credit card required • Cancel anytime
