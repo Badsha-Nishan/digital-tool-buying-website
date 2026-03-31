@@ -5,7 +5,7 @@ import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className="bg-[#101727] text-white">
-      <div className="flex w-11/12 mx-auto p-24 justify-center gap-12">
+      <div className="flex flex-col md:flex-row w-11/12 mx-auto p-24 gap-12">
         <div className="space-y-7">
           <h2 className="text-5xl font-bold">DigiTools</h2>
           <p className="max-w-[350px]">
@@ -13,50 +13,52 @@ const Footer = () => {
             Work smarter with our suite of powerful tools.
           </p>
         </div>
-        <div className="space-y-4">
-          <p className="font-bold text-xl">Product</p>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Features</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Pricing</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Templates</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Integrations</p>
-          </a>
-        </div>
-        <div className="space-y-4">
-          <p className="font-bold text-xl">Company</p>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">About</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Blog</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Careers</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Press</p>
-          </a>
-        </div>
-        <div className="space-y-4">
-          <p className="font-bold text-xl">Resources</p>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Documentation</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Help Center</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Community</p>
-          </a>
-          <a className="hover:underline" href="#">
-            <p className="mb-3">Contact</p>
-          </a>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-24">
+          <div className="space-y-4">
+            <p className="font-bold text-xl">Product</p>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Features</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Pricing</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Templates</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Integrations</p>
+            </a>
+          </div>
+          <div className="space-y-4">
+            <p className="font-bold text-xl">Company</p>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">About</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Blog</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Careers</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Press</p>
+            </a>
+          </div>
+          <div className="space-y-4">
+            <p className="font-bold text-xl">Resources</p>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Documentation</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Help Center</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Community</p>
+            </a>
+            <a className="hover:underline" href="#">
+              <p className="mb-3">Contact</p>
+            </a>
+          </div>
         </div>
         <div>
           <p className="font-bold text-xl">Social Links</p>
@@ -89,7 +91,7 @@ const Footer = () => {
         <div>
           <p>© 2026 Digitools. All rights reserved.</p>
         </div>
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           <a className="hover:underline" href="#">
             Privacy Policy
           </a>
