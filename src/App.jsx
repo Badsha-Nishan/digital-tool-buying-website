@@ -28,7 +28,7 @@ function App() {
   const cardPromise = PriceCardPromise();
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar cart={cart}></Navbar>
       <Banner></Banner>
       <Rating></Rating>
       <SectionTitle
@@ -64,7 +64,7 @@ function App() {
                 ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
                 : "text-black"
             } `}
-            aria-label="Cart (0)"
+            aria-label={`Cart (${cart.length})`}
             onClick={() => setSelectTab("cart")}
           />
         </div>
