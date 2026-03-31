@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = ({ cart }) => {
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="bg-base-100 shadow-lg fixed top-0 w-full z-50">
       <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -44,7 +44,9 @@ const Navbar = ({ cart }) => {
               </li>
             </ul>
           </div>
-          <a className="font-bold text-2xl lg:text-4xl text-[#4f39f6]">DigiTools</a>
+          <a className="font-bold text-2xl lg:text-4xl text-[#4f39f6]">
+            DigiTools
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -68,7 +70,7 @@ const Navbar = ({ cart }) => {
         <div className="navbar-end gap-2 flex-col md:flex-row">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
-              <svg 
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
@@ -83,8 +85,14 @@ const Navbar = ({ cart }) => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />{" "}
               </svg>
-              <span className="badge badge-sm bg-red-500 text-white rounded-full indicator-item">
-                {cart.length}
+              <span
+                className={`${
+                  cart.length !== 0
+                    ? "badge badge-sm bg-red-500 text-white rounded-full indicator-item"
+                    : ""
+                }`}
+              >
+                {cart.length !== 0 && cart.length}
               </span>
             </div>
           </div>

@@ -5,7 +5,7 @@ import dotIcon from "../../assets/group.png";
 
 const Banner = () => {
   return (
-    <div className="flex md:flex-row flex-col-reverse w-11/12 mx-auto items-center justify-center mt-16 gap-9">
+    <div className="flex md:flex-row flex-col-reverse w-11/12 mx-auto items-center justify-center mt-26 gap-9">
       <div className="space-y-6">
         <div className="space-y-6">
           <span className="text-[#4F39F6] bg-[#E1E7FF] items-center gap-3 px-4 inline-flex rounded-full p-2">
@@ -34,8 +34,18 @@ const Banner = () => {
           </button>
         </div>
       </div>
-      <div>
-        <img src={BannerImg} alt="Banner Image" />
+      <div className="hover-3d">
+        <figure className="max-w-100 rounded-2xl">
+          <img src={BannerImg} alt="Banner Image" />
+        </figure>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );

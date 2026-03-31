@@ -11,7 +11,7 @@ const Cards = ({ card, cart, setCart, notify }) => {
     setCart([...cart, card]);
   };
   return (
-    <div className="card bg-base-200 shadow-sm ">
+    <div className="card bg-base-200 shadow-sm hover:-translate-y-1.5 hover:shadow-blue-900 transition-all duration-200 ">
       <div className="card-body relative">
         <span
           className={
