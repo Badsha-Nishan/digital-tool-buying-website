@@ -6,14 +6,14 @@ const Cards = ({ card, cart, setCart, notify, already }) => {
   const [selectProduct, setSelectProduct] = useState(false);
 
   const handleBuy = () => {
-    if (selectProduct) {
+    const exist = cart.find((item) => item.name === card.name);
+    if (exist) {
       already();
       return;
-    } else {
-      setSelectProduct(true);
-      notify();
     }
     setCart([...cart, card]);
+    setSelectProduct(true);
+    notify();
   };
   return (
     <div className="card bg-base-200 shadow-sm hover:-translate-y-1.5 hover:shadow-blue-900 transition-all duration-200 ">
