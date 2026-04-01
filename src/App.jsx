@@ -29,14 +29,16 @@ function App() {
   const productCard = ProductsCardPromise();
   const cardPromise = PriceCardPromise();
   const notify = () =>
-    toast.success("Card Added Successfully!", {
+    toast.success("Product Added Successfully!", {
       position: "top-center",
     });
   const notify1 = () =>
     toast.success("Order Confirmed!", {
       position: "top-center",
     });
-  const remove = () => toast.error("Card Removed", { position: "top-left" });
+  const remove = () => toast.error("Product Removed", { position: "top-left" });
+  const already = () =>
+    toast.error("Product already added", { position: "top-center" });
   return (
     <>
       <Navbar cart={cart}></Navbar>
@@ -95,6 +97,7 @@ function App() {
             cart={cart}
             setCart={setCart}
             notify={notify}
+            already={already}
           ></CardSection>
         </Suspense>
       ) : cart.length !== 0 ? (

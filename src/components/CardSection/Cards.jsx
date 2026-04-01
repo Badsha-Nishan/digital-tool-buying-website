@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 
-const Cards = ({ card, cart, setCart, notify }) => {
+const Cards = ({ card, cart, setCart, notify, already }) => {
   const { name, description, price, tag, period, tagType, features, icon } =
     card;
   const [selectProduct, setSelectProduct] = useState(false);
 
   const handleBuy = () => {
-    notify()
-    setSelectProduct(true);
+    if (selectProduct) {
+      already();
+      return;
+    } else {
+      setSelectProduct(true);
+      notify();
+    }
     setCart([...cart, card]);
   };
   return (
