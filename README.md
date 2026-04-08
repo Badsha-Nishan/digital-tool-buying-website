@@ -50,6 +50,52 @@ This platform provides a smooth and interactive user experience with dynamic pro
 
 ---
 
+## ⚙️ How to Run Locally
+
+Follow these steps to run the project on your local machine:
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/Badsha-Nishan/digital-tool-buying-website
+```
+
+### 2️⃣ Navigate to the project folder
+
+```bash
+cd digital-tool-buying-website
+```
+
+### 3️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 4️⃣ Start the development server
+
+```bash
+npm run dev
+```
+
+### 5️⃣ Open in browser
+
+Go to:
+
+```
+http://localhost:5173
+```
+
+---
+
+## ✅ Requirements
+
+* Node.js (v14 or higher)
+* npm or yarn
+
+---
+
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork this repo and submit a pull request.
